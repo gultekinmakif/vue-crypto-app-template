@@ -62,6 +62,20 @@ Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer
 
 [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Disable Vetur if you have it.
 
+## Deploying to GitHub Pages
+
+`bun run build` produces a static `dist/` that GitHub Pages can serve. For a project page at `https://<user>.github.io/<repo>/`, set the Vite base path before building:
+
+```js
+// vite.config.js
+export default defineConfig({
+  base: "/<repo>/",
+  // ...
+})
+```
+
+The router uses HTML5 history mode (`createWebHistory`), so refreshing on a non-root path 404s by default. Copy `dist/index.html` to `dist/404.html` after the build and GitHub Pages will serve the SPA on every path.
+
 ## Using this as a template
 
 This repo is set up as a GitHub Template. Click **Use this template** on the repo page, or:
