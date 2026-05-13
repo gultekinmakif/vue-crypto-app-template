@@ -64,17 +64,17 @@ Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer
 
 ## Deploying to GitHub Pages
 
-`bun run build` produces a static `dist/` that GitHub Pages can serve. For a project page at `https://<user>.github.io/<repo>/`, set the Vite base path before building:
+A workflow at `.github/workflows/pages.yml` builds and publishes to GitHub Pages on every push to `main`. To enable it on a fresh fork or template clone:
 
-```js
-// vite.config.js
-export default defineConfig({
-  base: "/<repo>/",
-  // ...
-})
-```
+1. **Repo Settings → Pages → Source**: select **GitHub Actions**.
+2. Push to `main` (or run the workflow manually from the Actions tab).
 
-The router uses HTML5 history mode (`createWebHistory`), so refreshing on a non-root path 404s by default. Copy `dist/index.html` to `dist/404.html` after the build and GitHub Pages will serve the SPA on every path.
+The site is served at `https://<user>.github.io/<repo>/`. The workflow exports `BASE_PATH=/<repo>/` so the Vite build picks up the right asset prefix on a per-fork basis — no manual edit to `vite.config.js` needed.
+
+Two small additions in `vite.config.js` make it work end-to-end:
+
+- `base` reads from `process.env.BASE_PATH` (defaults to `/` so local dev is unaffected).
+- A tiny `spa-404-fallback` plugin copies `dist/index.html` to `dist/404.html` at the end of every build. The router uses HTML5 history mode (`createWebHistory`), so direct hits to non-root paths would 404 without this fallback.
 
 ## Using this as a template
 
