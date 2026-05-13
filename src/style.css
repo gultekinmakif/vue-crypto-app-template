@@ -1,0 +1,211 @@
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("./fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300, 500, 700, 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Equinox";
+  src: url("fonts/Equinox.woff") format("woff");
+}
+
+:root {
+  --color-black: #121215;
+  --color-white: #d9e3f1;
+  --color-purple: #8761ff;
+  --color-blue: #4909f0;
+  --color-dark-green: #207934;
+  --color-green: #09f0cd;
+  --color-red: #c91d3c;
+
+  --color-text: #e1e2fa;
+  --color-text-muted: #acb3ba;
+
+  --transition: all 0.3s ease-in-out;
+
+  --max-pad: 3rem;
+  --huge-pad: 2.5rem;
+  --big-pad: 1.5rem;
+  --norm-pad: 1rem;
+  --small-pad: 0.75rem;
+  --mini-pad: 0.5rem;
+  --min-pad: 0.25rem;
+
+  --border-radius: 4px;
+  --blur: blur(12px);
+}
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+  scroll-behavior: smooth;
+  font-family: inherit;
+}
+
+body {
+  font-family:
+    "Satoshi-Variable",
+    "Space Grotesk",
+    -apple-system,
+    "Roboto",
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  text-align: left;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--color-black);
+  /* background-color: black; */
+  background-image: url("/assets/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-text);
+  line-height: 1.5;
+  font-weight: 500;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hoverable {
+  cursor: pointer;
+  transition: var(--transition);
+}
+.hoverable:hover {
+  transform: scale(0.98);
+}
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+/** SCROLLBAR **/
+.scrollable {
+  height: -webkit-fill-available;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scrollable::-webkit-scrollbar-track {
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  width: 8px;
+}
+
+.scrollable::-webkit-scrollbar {
+  margin-right: 1px;
+  width: 8px;
+  background-color: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius);
+  background-color: var(--color-text);
+  background-clip: content-box;
+  border: 3px solid transparent;
+}
+.scrollable::-webkit-scrollbar-button:horizontal:increment {
+  display: hidden;
+}
+.scrollable::-webkit-scrollbar-button:horizontal:decrement {
+  display: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/** LOADER **/
+.loader-enter-active,
+.loader-leave-active {
+  transition: opacity 1.2s ease;
+}
+.loader-enter-to,
+.loader-leave-from {
+  opacity: 1;
+}
+.loader-enter-from,
+.loader-leave-to {
+  opacity: 0;
+}
+
+/** FADEIN **/
+
+.fadein-enter-active,
+.fadein-leave-active {
+  transition: all 0.7s ease-in-out;
+}
+
+.fadein-enter-to,
+.fadein-leave-from {
+  opacity: 1;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadein-enter-from,
+.fadein-leave-to {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.7s ease-in-out;
+}
+
+/** FONTS **/
+.xxxlarge {
+  font-size: 56px;
+}
+.xxlarge {
+  font-size: 40px;
+}
+.xlarge {
+  font-size: 32px;
+}
+.large {
+  font-size: 28px;
+}
+.medium {
+  font-size: 24px;
+}
+.small {
+  font-size: 18px;
+}
+.xsmall {
+  font-size: 16px;
+}
+.xxsmall {
+  font-size: 14px;
+}
+.xxxsmall {
+  font-size: 12px;
+}
+.xxxxsmall {
+  font-size: 9px;
+}

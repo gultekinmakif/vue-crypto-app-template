@@ -1,0 +1,55 @@
+{
+  "name": "crypto-app-template",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gultekinmakif/crypto-app-template"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "serve": "serve -s dist",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,css,ts,tsx,json,vue}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aacassandra/vue3-progressbar": "^1.0.3",
+    "@web3-onboard/core": "^2.22.1",
+    "@web3-onboard/injected-wallets": "^2.11.1",
+    "axios": "^1.7.2",
+    "bignumber.js": "^9.1.2",
+    "ethers": "^6.13.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2",
+    "vue-toastification": "^2.0.0-rc.5",
+    "web3": "^4.9.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.3",
+    "sharp": "^0.33.4",
+    "svgo": "^3.3.2",
+    "vite": "^5.2.0",
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-robots": "^1.0.5",
+    "vite-plugin-vue-devtools": "^7.2.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
