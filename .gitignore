@@ -1,0 +1,26 @@
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local config / secrets
+.env
+.env.*
+!.env.example
+*.local
+*.local.json
+
+# Claude Code per-machine settings
+.claude/settings.local.json
+
+# Logs
+*.log
+logs/
+
+# Claude Code agents (symlinked, not tracked)
+.claude/agents
