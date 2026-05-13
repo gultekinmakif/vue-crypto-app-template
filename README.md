@@ -1,23 +1,75 @@
 # crypto-app-template
 
-> One-line description.
+A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-chain config, and a router/state baseline — drop in your contract calls and ship.
 
-## Overview
+## What's inside
 
-What this project does and why it exists.
+- **Vue 3** + **Vite 5** with `<script setup>` SFCs
+- **`@web3-onboard/core`** + injected-wallets for wallet connection (MetaMask, Rabby, etc.)
+- **ethers v6** and **web3.js v4** both bundled — pick one per call
+- **Pinia** store (`walletStore`) wrapping the onboard state
+- **vue-router 4** scaffolded with a single route
+- **vue-toastification** for transient UI feedback
+- **bignumber.js** for safe on-chain math
+- ESLint + Prettier configured for Vue SFCs
+- No TypeScript, no JSX, no Webpack — keeps the boilerplate readable
 
-## Getting started
+## Quick start
 
-```bash
-# clone
-git clone git@github.com:gultekinmakif/crypto-app-template.git
-cd crypto-app-template
+```sh
+npm install
+npm run dev
 ```
 
-## Status
+Then open the URL Vite prints (usually `http://localhost:5173`).
 
-WIP. Not yet versioned.
+## Configure your chains
+
+Chain configs live in [`src/stores/walletStore/index.js`](./src/stores/walletStore/index.js) under `_chains`. The included examples are Holesky, Fuji, Avalanche C-Chain, and Ethereum Mainnet. Add or remove as needed:
+
+```js
+const _chains = {
+  myChain: {
+    id: "0x...",            // hex chainId
+    token: "ETH",
+    label: "My Chain",
+    rpcUrl: "https://...",
+  },
+  // ...
+}
+```
+
+- `_chains_default` sets the chain a fresh visitor lands on.
+- `_chains_not_ready` lists chains that surface as "coming soon" but don't block connection.
+
+## Wire wallet-onboard
+
+Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer.blocknative.com/account) and drop it into the `Onboard({ apiKey: "..." })` call in `walletStore/index.js`. The template ships with an empty key — it works locally without one, but production wallet flows need your own.
+
+## Scripts
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Vite dev server with HMR |
+| `npm run build` | Production bundle into `dist/` |
+| `npm run watch` | Production build that rebuilds on change |
+| `npm run serve` | Serve a prebuilt `dist/` on localhost |
+| `npm run preview` | Vite preview server (built bundle) |
+| `npm run lint` | ESLint with `--fix` over `.vue`, `.js`, `.jsx`, `.cjs`, `.mjs` |
+| `npm run pretty` | Prettier across the project |
+
+## Recommended IDE
+
+[VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Disable Vetur if you have it.
+
+## Using this as a template
+
+This repo is set up as a GitHub Template. Click **Use this template** on the repo page, or:
+
+```sh
+gh repo create my-app --template gultekinmakif/crypto-app-template --private --clone
+```
 
 ## License
 
-MIT (or specify).
+[MIT](./LICENSE).

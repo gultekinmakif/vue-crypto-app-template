@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # OS noise
 .DS_Store
 Thumbs.db
@@ -25,7 +24,7 @@ logs/
 
 # Claude Code agents (symlinked, not tracked)
 .claude/agents
-=======
+
 # Logs
 logs
 *.log
@@ -53,4 +52,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
->>>>>>> b6e610f (chore: add gitignore, MIT license, and GitHub boilerplate)
