@@ -1,4 +1,4 @@
-# crypto-app-template
+# vue-crypto-app-template
 
 A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-chain config, and a router/state baseline — drop in your contract calls and ship.
 
@@ -67,7 +67,7 @@ Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer
 This repo is set up as a GitHub Template. Click **Use this template** on the repo page, or:
 
 ```sh
-gh repo create my-app --template gultekinmakif/crypto-app-template --private --clone
+gh repo create my-app --template gultekinmakif/vue-crypto-app-template --private --clone
 ```
 
 ## License

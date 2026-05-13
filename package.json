@@ -1,5 +1,5 @@
 {
-  "name": "crypto-app-template",
+  "name": "vue-crypto-app-template",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gultekinmakif/crypto-app-template"
+    "url": "https://github.com/gultekinmakif/vue-crypto-app-template"
   },
   "scripts": {
     "dev": "vite",
