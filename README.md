@@ -17,8 +17,8 @@ A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-cha
 ## Quick start
 
 ```sh
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Then open the URL Vite prints (usually `http://localhost:5173`).
@@ -50,13 +50,13 @@ Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Vite dev server with HMR |
-| `npm run build` | Production bundle into `dist/` |
-| `npm run watch` | Production build that rebuilds on change |
-| `npm run serve` | Serve a prebuilt `dist/` on localhost |
-| `npm run preview` | Vite preview server (built bundle) |
-| `npm run lint` | ESLint with `--fix` over `.vue`, `.js`, `.jsx`, `.cjs`, `.mjs` |
-| `npm run pretty` | Prettier across the project |
+| `bun run dev` | Vite dev server with HMR |
+| `bun run build` | Production bundle into `dist/` |
+| `bun run watch` | Production build that rebuilds on change |
+| `bun run serve` | Serve a prebuilt `dist/` on localhost |
+| `bun run preview` | Vite preview server (built bundle) |
+| `bun run lint` | ESLint with `--fix` over `.vue`, `.js`, `.jsx`, `.cjs`, `.mjs` |
+| `bun run pretty` | Prettier across the project |
 
 ## Recommended IDE
 
