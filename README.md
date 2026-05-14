@@ -1,5 +1,7 @@
 # vue-crypto-app-template
 
+[![Template](https://img.shields.io/badge/template-use%20this-2ea44f)](https://github.com/gultekinmakif/vue-crypto-app-template/generate)
+
 A minimal Vue 3 + Vite starter for crypto / web3 apps.
 
 ![Crypto App Template screenshot](./ss.png)
