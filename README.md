@@ -4,15 +4,17 @@ A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-cha
 
 ## What's inside
 
-- **Vue 3** + **Vite 5** with `<script setup>` SFCs
+- **Vue 3.5** + **Vite 8** with `<script setup>` SFCs
 - **`@web3-onboard/core`** + injected-wallets for wallet connection (MetaMask, Rabby, etc.)
 - **ethers v6** and **web3.js v4** both bundled — pick one per call
-- **Pinia** store (`walletStore`) wrapping the onboard state
-- **vue-router 4** scaffolded with a single route
+- **Pinia 3** store (`walletStore`) wrapping the onboard state
+- **vue-router 5** with a chain-guard that pins `?chain=` to a configured chainId
 - **vue-toastification** for transient UI feedback
-- **bignumber.js** for safe on-chain math
+- **bignumber.js 11** for safe on-chain math
 - ESLint + Prettier configured for Vue SFCs
 - No TypeScript, no JSX, no Webpack — keeps the boilerplate readable
+
+See [`MIGRATION.md`](./MIGRATION.md) for the per-package version notes from the most recent dep bump.
 
 ## Quick start
 
