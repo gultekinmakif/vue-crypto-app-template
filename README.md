@@ -2,6 +2,8 @@
 
 A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-chain config, and a router/state baseline — drop in your contract calls and ship.
 
+![Crypto App Template screenshot](./ss.png)
+
 ## What's inside
 
 - **Vue 3.5** + **Vite 8** with `<script setup>` SFCs
