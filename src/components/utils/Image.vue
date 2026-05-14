@@ -33,7 +33,7 @@ const position = props.asBackground ? "absolute" : "relative"
 .image {
   position: v-bind(position);
   object-fit: contain;
-  width: 100;
+  width: auto;
   height: auto;
 }
 </style>
