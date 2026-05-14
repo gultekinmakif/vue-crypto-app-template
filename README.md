@@ -8,7 +8,7 @@ A minimal Vue 3 + Vite starter for crypto / web3 apps.
 
 - **Vue 3.5** + **Vite 8** with `<script setup>` SFCs
 - **`@web3-onboard/core`** + injected-wallets for wallet connection (MetaMask, Rabby, etc.)
-- **ethers v6** and **web3.js v4** both bundled — pick one per call
+- **ethers v6** for contract calls, signing, and provider plumbing
 - **Pinia 3** store (`walletStore`) wrapping the onboard state
 - **vue-router 5** with a chain-guard that pins `?chain=` to a configured chainId
 - **vue-toastification** for transient UI feedback

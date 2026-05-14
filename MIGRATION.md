@@ -19,7 +19,7 @@ Tracks each package, what changed, and whether any code edits were needed.
 | `vue` | `^3.4.21` | `^3.5.34` | no | none | minor bump; v3.5 ships reactivity / SSR improvements with no template breaking changes used here |
 | `vue-router` | `^4.3.2` | `^5.0.7` | yes | none | per upstream, v5 is a "boring release" that merges unplugin-vue-router into core with no breaking changes to `createRouter`, `createWebHistory`, or `beforeEach` |
 | `vue-toastification` | `^2.0.0-rc.5` | `^2.0.0-rc.5` | n/a | none | npm `latest` dist-tag still points at the Vue-2 `1.7.14` line; the Vue-3 build is on the `next` dist-tag and is still tagged `2.0.0-rc.5`. Pin stays on the rc until a stable v2 lands |
-| `web3` | `^4.9.0` | `^4.16.0` | no | none | only `Web3.utils.toChecksumAddress` (walletStore line 146) and `new Web3(provider).eth.getBalance` (walletStore line 191) are used; both are stable across the v4 line. `Web3.utils.toChecksumAddress` could be replaced with `ethers.getAddress` to drop the `web3` dep entirely — deferred for a follow-up commit, not in scope here |
+| `web3` | `^4.9.0` | (removed) | n/a | yes | dropped in favor of `ethers` — `Web3.utils.toChecksumAddress` replaced with `ethers.getAddress`; `new Web3(provider).eth.getBalance` replaced with `new BrowserProvider(provider).getBalance` |
 
 ## Dev dependencies
 
@@ -43,4 +43,3 @@ Tracks each package, what changed, and whether any code edits were needed.
 ## Deferred follow-ups
 
 - **ESLint v8 → v9 (flat-config).** v9 removes `--ignore-path`, removes the legacy `.eslintrc.cjs` resolution, and requires migrating to `eslint.config.js`. Out of scope here; tracked for a separate commit. While deferred, `@vue/eslint-config-prettier` stays on v9 and `eslint-plugin-vue` stays on the v9 line to match.
-- **Drop `web3.js` dependency.** Only used for `Web3.utils.toChecksumAddress` (one call site) and `new Web3(provider).eth.getBalance` (one call site). The first has a one-line ethers v6 equivalent (`ethers.getAddress`); the second is a small `BrowserProvider(provider).getBalance(address)` swap. Removing the dep would drop a non-trivial transitive tree. Not done here; surface as its own commit if pursued.

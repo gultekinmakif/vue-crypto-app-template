@@ -32,14 +32,13 @@ const setchainquery = (to) => {
     }
 
     // add more handlers about chains here
-
-    // add more handlers about chains here
-  } else {
-    const toast = useToast()
-    toast.error(`Unknown chain: ${to.query.chain}. Switching to ${chains_default}.`)
-    to.query.chain = chains[chains_default].id
-    return { query: to.query }
+    return true
   }
+
+  const toast = useToast()
+  toast.error(`Unknown chain: ${to.query.chain}. Switching to ${chains_default}.`)
+  to.query.chain = chains[chains_default].id
+  return { query: to.query }
 }
 
 const router = createRouter({
