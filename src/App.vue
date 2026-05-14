@@ -8,16 +8,16 @@
 
 <script setup>
 import { onMounted, ref } from "vue"
-import timeout from "@/common/timeout"
 
-var domIsReady = ref(false)
+const domIsReady = ref(false)
 
 onMounted(() => {
-  document.onreadystatechange = async () => {
-    if (document.readyState == "complete") {
-      await timeout(1000)
-      domIsReady.value = true
-    }
+  if (document.readyState == "complete") {
+    domIsReady.value = true
+    return
+  }
+  document.onreadystatechange = () => {
+    if (document.readyState == "complete") domIsReady.value = true
   }
 })
 </script>
