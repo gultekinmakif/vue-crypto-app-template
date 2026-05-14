@@ -12,8 +12,7 @@ import { useRoute } from "vue-router"
 import { useToast } from "vue-toastification"
 
 // Default chain set: Sepolia testnet plus the top EVM mainnets by TVL
-// (see DefiLlama, May 2026). All RPCs are publicnode.com — free, no
-// API key required, stable enough for a starter template.
+// (see DefiLlama, May 2026). All RPCs are publicnode.com.
 const _chains = {
   sepolia: {
     id: "0xaa36a7",

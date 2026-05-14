@@ -1,6 +1,6 @@
 # vue-crypto-app-template
 
-A minimal Vue 3 + Vite starter for crypto / web3 apps. Wallet connect, multi-chain config, and a router/state baseline — drop in your contract calls and ship.
+A minimal Vue 3 + Vite starter for crypto / web3 apps.
 
 ![Crypto App Template screenshot](./ss.png)
 
