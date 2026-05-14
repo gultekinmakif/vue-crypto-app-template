@@ -56,7 +56,7 @@ const onboard = Onboard({
   wallets: [injected],
   chains: _chains_values,
   theme: "dark",
-  apiKey: "",
+    // apiKey: "",// Add your Blocknative apiKey here if you want notify support.
   appMetadata: {
     name: "Crypto App Template",
     icon: icon,

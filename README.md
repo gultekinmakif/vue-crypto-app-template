@@ -46,7 +46,14 @@ const _chains = {
 
 ## Wire wallet-onboard
 
-Get your own Blocknative `apiKey` at [explorer.blocknative.com](https://explorer.blocknative.com/account) and drop it into the `Onboard({ apiKey: "..." })` call in `walletStore/index.js`. The template ships with an empty key — it works locally without one, but production wallet flows need your own.
+The template runs without a Blocknative `apiKey`. To enable notify (transaction toast feed, per-wallet labels, etc.), grab a key at [explorer.blocknative.com](https://explorer.blocknative.com/account) and add it to the `Onboard({...})` call in `walletStore/index.js`:
+
+```js
+const onboard = Onboard({
+  apiKey: "your-key-here",
+  // ...
+})
+```
 
 ## Scripts
 
