@@ -1,11 +1,14 @@
 <template>
   <div class="hello flex-col">
-    <image-vue class="hello-logo" src="logo.svg" width="56px" />
+    <image-vue class="hello-logo" src="pp.jpeg" width="56px" />
 
     <div class="hello-header xlarge">Crypto App Template</div>
     <div class="hello-text small">
-      A minimal Vue 3 + Vite starter for crypto apps. Wallet connect, multi-chain config,
-      router + state baseline.
+      A minimal Vue 3 + Vite starter for crypto apps.
+      <br>
+      <span class="hello-text xsmall">
+        Wallet connect, multi-chain config, router + state baseline.
+      </span>
     </div>
 
     <div v-if="isConnected" class="hello-text">
@@ -41,12 +44,19 @@
       />
     </div>
 
-    <a class="github-logo hoverable" :href="repo_url" target="_blank" rel="noopener noreferrer">
-      <image-vue src="github.svg" width="24px" />
+    <div class="social-logo flex-col">
+      <div class="social-icons flex-row">
+        <a class="hoverable" :href="repo_url" target="_blank" rel="noopener noreferrer">
+          <image-vue src="github.svg" width="24px" />
+        </a>
+        <a class="hoverable" href="https://x.com/0xIcebear" target="_blank" rel="noopener noreferrer">
+          <image-vue src="x.svg" width="24px" />
+        </a>
+      </div>
       <div class="version xxxxsmall">
         {{ app_version }}
       </div>
-    </a>
+    </div>
 
     <!-- todo: loading bar doesnt work for router yet? -->
     <!-- <router-link to="/momo">momo</router-link> -->
@@ -88,7 +98,6 @@ onMounted(async () => {
   repo_url.value = REPOSITORY_URL
   await timeout(300)
   pending.value = false
-  console.log()
 })
 </script>
 
@@ -113,11 +122,18 @@ onMounted(async () => {
   background: linear-gradient(0deg, rgba(7, 3, 26, 0.2), rgba(7, 3, 26, 0.2)),
     linear-gradient(0deg, rgba(10, 23, 153, 0.02), rgba(10, 23, 153, 0.02));
 }
-.github-logo {
+.social-logo {
   position: absolute;
   justify-self: flex-end;
   bottom: 0;
   padding: var(--norm-pad);
+}
+.social-icons {
+  gap: var(--mini-pad);
+}
+.hello-logo {
+  border-radius: 50%;
+  overflow: hidden;
 }
 .version {
   color: var(--color-text-muted);
