@@ -1,4 +1,5 @@
 import "@/style.css"
+import "nprogress/nprogress.css"
 
 // App
 import { createApp } from "vue"
@@ -14,24 +15,6 @@ app.component("loader", loader)
 app.component("loading-svg", loadingSvg)
 app.component("button-vue", buttonVue)
 app.component("image-vue", imageVue)
-
-// Progress Bar
-import VueProgressBar from "@aacassandra/vue3-progressbar"
-const VueProgressBarOpts = {
-  color: "#8761ff",
-  failedColor: "#c91d3c",
-  thickness: "3px",
-  transition: {
-    speed: "0.2s",
-    opacity: "0.6s",
-    termination: 300,
-  },
-  autoRevert: true,
-  autoFinish: true,
-  location: "top",
-  inverse: false,
-}
-app.use(VueProgressBar, VueProgressBarOpts)
 
 // router
 import router from "./router"

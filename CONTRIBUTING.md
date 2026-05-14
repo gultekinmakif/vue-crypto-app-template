@@ -23,18 +23,17 @@ git checkout -b my-new-feature
 - `feat`: a commit that adds new functionality.
 - `refactor`: a commit that only has semantic changes, no functional effect.
 - `build`: a commit that includes changes that affect the build system or external *dependencies*
-- `deploy`: a commit that either includes a deployment , or triggers one on a hosted envireonment like AWS.
+- `deploy`: a commit that either includes a deployment, or triggers one on a hosted environment like AWS.
 - `docs`: a commit that adds or improves documentation.
 - `test`: a commit that adds unit tests.
 - `revert`: a commit that reverts a previous change.
 - `chore`: a catch-all type for any other commits. For instance, if you're implementing a single feature and it makes sense to divide the work into multiple commits, you should mark one commit as feat and the rest as chore.
 
-## 2. Lint, Format, Test
+## 3. Lint and format
 
 Run this before pushing your changes:
 
 ```bash
-npm run lint
-npm run test
-npm run pretty
+bun run lint
+bun run pretty
 ```

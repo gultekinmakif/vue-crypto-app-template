@@ -7,40 +7,60 @@ import Onboard from "@web3-onboard/core"
 import injectedModule from "@web3-onboard/injected-wallets"
 
 import BN from "@/common/BN"
-import icon from "./icon.svg"
 
 import { useRoute } from "vue-router"
 import { useToast } from "vue-toastification"
 
+// Default chain set: Sepolia testnet plus the top EVM mainnets by TVL
+// (see DefiLlama, May 2026). All RPCs are publicnode.com — free, no
+// API key required, stable enough for a starter template.
 const _chains = {
-  holesky: {
-    id: "0x4268",
+  sepolia: {
+    id: "0xaa36a7",
     token: "ETH",
-    label: "Holesky Testnet",
-    rpcUrl: "https://holesky.drpc.org",
+    label: "Sepolia Testnet",
+    rpcUrl: "https://ethereum-sepolia-rpc.publicnode.com",
   },
-  fuji: {
-    id: "0xa869",
-    token: "AVAX",
-    label: "Fuji Testnet",
-    rpcUrl: "https://api.avax-test.network/ext/bc/C/rpc",
+  ethereum: {
+    id: "0x1",
+    token: "ETH",
+    label: "Ethereum",
+    rpcUrl: "https://ethereum-rpc.publicnode.com",
   },
-  avax: {
+  bsc: {
+    id: "0x38",
+    token: "BNB",
+    label: "BNB Chain",
+    rpcUrl: "https://bsc-rpc.publicnode.com",
+  },
+  base: {
+    id: "0x2105",
+    token: "ETH",
+    label: "Base",
+    rpcUrl: "https://base-rpc.publicnode.com",
+  },
+  arbitrum: {
+    id: "0xa4b1",
+    token: "ETH",
+    label: "Arbitrum One",
+    rpcUrl: "https://arbitrum-one-rpc.publicnode.com",
+  },
+  polygon: {
+    id: "0x89",
+    token: "POL",
+    label: "Polygon",
+    rpcUrl: "https://polygon-bor-rpc.publicnode.com",
+  },
+  avalanche: {
     id: "0xa86a",
     token: "AVAX",
     label: "Avalanche C-Chain",
-    rpcUrl: "https://api.avax.network/ext/bc/C/rpc",
-  },
-  ethereum: {
-    id: "0x01",
-    token: "ETH",
-    label: "Ethereum Mainnet",
-    rpcUrl: "https://mainnet.infura.io/v3/",
+    rpcUrl: "https://avalanche-c-chain-rpc.publicnode.com",
   },
 }
 
-const _chains_not_ready = ["ethereum", "avax"]
-const _chains_default = "holesky"
+const _chains_not_ready = []
+const _chains_default = "sepolia"
 const _chains_values = Object.values(_chains)
 
 // const _tx_links = {
@@ -56,24 +76,14 @@ const onboard = Onboard({
   wallets: [injected],
   chains: _chains_values,
   theme: "dark",
-  apiKey: "",
+  // apiKey: "", // Add your Blocknative apiKey here if you want notify support.
   appMetadata: {
     name: "Crypto App Template",
-    icon: icon,
+    icon: "/assets/pp.jpeg",
     description: "A minimal Vue 3 + Vite starter for crypto apps.",
   },
   connect: {
     autoConnectLastWallet: true,
-  },
-  notify: {
-    mobile: {
-      enabled: true,
-      position: "bottomRight",
-    },
-    desktop: {
-      enabled: true,
-      position: "topRight",
-    },
   },
 })
 
