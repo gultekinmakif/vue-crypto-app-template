@@ -2,7 +2,7 @@ import { ref, computed, watch } from "vue"
 import { defineStore } from "pinia"
 import timeout from "@/common/timeout"
 
-import Web3 from "web3"
+import { getAddress, BrowserProvider } from "ethers"
 import Onboard from "@web3-onboard/core"
 import injectedModule from "@web3-onboard/injected-wallets"
 
@@ -152,7 +152,7 @@ export const useWalletStore = defineStore("wallet", () => {
       if (new_label != prev_label || new_chains != prev_chains || new_accounts != prev_accounts) {
         if (new_accounts?.length > 0) {
           console.log("account changed")
-          userAddress.value = Web3.utils.toChecksumAddress(new_accounts[0].address)
+          userAddress.value = getAddress(new_accounts[0].address)
           await updateUserBalance()
         } else {
           console.log("account disconnected")
@@ -196,8 +196,9 @@ export const useWalletStore = defineStore("wallet", () => {
     try {
       await timeout(300)
       if (isConnected.value) {
-        const w3 = new Web3(selectedWallet.value.provider)
-        userBalance.value = BN(await w3.eth.getBalance(userAddress.value))
+        const provider = new BrowserProvider(selectedWallet.value.provider)
+        const balance = await provider.getBalance(userAddress.value)
+        userBalance.value = BN(balance.toString())
       } else {
         userBalance.value = BN(0)
       }
