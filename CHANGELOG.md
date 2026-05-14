@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gultekinmakif/vue-crypto-app-template/compare/v1.0.1...v1.0.2) (2026-05-14)
+
+
+### Bug Fixes
+
+* **image:** use auto width instead of invalid '100' value ([cce1f75](https://github.com/gultekinmakif/vue-crypto-app-template/commit/cce1f75cfa87c9f8071aaa6bd4e6a371a1975315))
+
 ## [1.0.1](https://github.com/gultekinmakif/vue-crypto-app-template/compare/v1.0.0...v1.0.1) (2026-05-14)
 
 
