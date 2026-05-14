@@ -209,3 +209,14 @@ input::-webkit-inner-spin-button {
 .xxxxsmall {
   font-size: 9px;
 }
+
+/* NProgress: match the template's purple accent */
+#nprogress .bar {
+  background: #8761ff;
+  height: 3px;
+}
+#nprogress .peg {
+  box-shadow:
+    0 0 10px #8761ff,
+    0 0 5px #8761ff;
+}

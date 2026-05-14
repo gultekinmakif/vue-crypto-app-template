@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router"
+import NProgress from "nprogress"
 
 import { chains, chains_default, chains_not_ready } from "@/stores/walletStore"
 import { useToast } from "vue-toastification"
+
+NProgress.configure({ showSpinner: false })
 
 const setchainquery = (to) => {
   if (!Object.prototype.hasOwnProperty.call(to.query, "chain")) {
@@ -67,6 +70,12 @@ const router = createRouter({
   ],
 })
 
+router.beforeEach(() => {
+  NProgress.start()
+})
 router.beforeEach(setchainquery)
+router.afterEach(() => {
+  NProgress.done()
+})
 
 export default router
